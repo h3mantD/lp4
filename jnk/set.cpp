@@ -21,7 +21,7 @@ using namespace std;
 #define fo(i,n) for(int i=0; i<n; i++)
 #define tr(it, a) for(auto it = a.begin(); it != a.end(); it++)
 
-
+//clear screen 
 #define clearScreen cout << "\033[2J\033[1;1H"
 
 auto acceptSet() {
@@ -44,10 +44,12 @@ auto acceptSet() {
 void displaySet(set<int>s) {
     cout<<"set :  {";
     set<int> :: iterator it = s.begin();
+    
     fo(i, s.size()-1) {
         cout<<*it<<", ";
         it++;
     }
+    
     cout<<*it<<"}"<<endl;
     
 }
@@ -55,6 +57,7 @@ void displaySet(set<int>s) {
 
 auto unionSet(set<int>s1, set<int>s2) {
     set<int>temp(s1);
+    
     for(auto x: s2)
         temp.insert(x);
 
@@ -63,6 +66,7 @@ auto unionSet(set<int>s1, set<int>s2) {
 
 auto intersection(set<int>s1, set<int>s2) {
     set<int>temp;
+    
     for(auto x: s1) {
         for(auto y: s2) {
             if (x==y)
