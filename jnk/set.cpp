@@ -22,6 +22,8 @@ using namespace std;
 #define tr(it, a) for(auto it = a.begin(); it != a.end(); it++)
 
 
+#define clearScreen cout << "\033[2J\033[1;1H"
+
 auto acceptSet() {
     int n; 
     cout<<"How many elements you want in set : ";
@@ -101,12 +103,12 @@ auto difference(set<int>s1, set<int>s2) {
 int main(int argc, char const *argv[])
 {
         
-    cout<<"*** A set details ***\n";
-    set<int>s1 = acceptSet();
-    cout<<"*** B set details ***\n";
-    set<int>s2 = acceptSet();
+    cout<<"*** [A] set details ***\n\n";
+    set<int>s1 = acceptSet(); cout<<endl;
+    cout<<"*** [B] set details ***\n\n";
+    set<int>s2 = acceptSet(); cout<<endl;
 
-    cout << "\033[2J\033[1;1H";
+    clearScreen;
     cout<<"A : ";
     displaySet(s1);
 
@@ -134,7 +136,7 @@ int main(int argc, char const *argv[])
         cout<<"Enter your choice : ";
         cin>>ch;
 
-        cout << "\033[2J\033[1;1H";
+        clearScreen;
         cout<<"A : ";
         displaySet(s1);
 
@@ -144,22 +146,22 @@ int main(int argc, char const *argv[])
         switch (ch)
         {
         case 1:
-            cout<<"Union of A and B is : ";
+            cout<<"[ A ∪ B ] : ";
             displaySet(unionSet(s1,s2));
             break;
 
         case 2:
-            cout<<"Intersection of A and B is : ";
+            cout<<"[ A ∩ B ] : ";
             displaySet(intersection(s1,s2));
             break;
 
         case 3:
-            cout<<"A-B is : ";
+            cout<<"A-B : ";
             displaySet(difference(s1,s2));
             break;
 
         case 4:
-            cout<<"B-A is : ";
+            cout<<"B-A : ";
             displaySet(difference(s2,s1));
             break;
 
@@ -169,17 +171,17 @@ int main(int argc, char const *argv[])
             break;
 
         case 6:
-            cout<<"*** A set details ***\n";
-            s1 = acceptSet();
+            cout<<"*** A set details ***\n\n";
+            s1 = acceptSet(); cout<<endl;
             break;
             
         case 7:
-            cout<<"*** B set details ***\n";
-            s2 = acceptSet();
+            cout<<"*** B set details ***\n\n";
+            s2 = acceptSet(); cout<<endl;
             break;
         
         case 8:
-            cout << "\033[2J\033[1;1H";
+            clearScreen;
             cout<<"Exiting ......\n....\n..\n.\n";
             exit(0);
             break;
