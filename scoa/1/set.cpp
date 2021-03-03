@@ -1,10 +1,3 @@
-/* 
-    * Name : Hemant Durdhawale
-    * BE-A : 35
-    * Set Operations
-*/
-
-
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -26,8 +19,7 @@ using namespace std;
 
 auto acceptSet() {
     int n; 
-    cout<<"How many elements you want in set : ";
-    cin>>n;
+    cout<<"How many elements you want in set : "; cin>>n;
     
     set<int>s;
     cout<<"Enter the elements of set : ";
@@ -82,10 +74,6 @@ auto difference(set<int>s1, set<int>s2) {
     set<int> iSet = intersection(s1,s2);
     set<int> diff;
     
-    /* for(auto x:iSet) {
-        diff.erase(x);
-    }  
-    */
 
     for(auto x:s1) {
         bool found = false;
