@@ -73,7 +73,7 @@ auto differenceSet(map<int, float> A, map<int, float> B) {
     int size = A.size();
     map<int, float> Y;
     fo(i,size+1,1) {
-       Y[i] = (A[i] < B[i])? A[i]:1-B[i];
+       Y[i] = (A[i] < B[i])? A[i]:B[i];
     }
 
     return Y;
@@ -101,11 +101,18 @@ int main() {
     map<int, float> A = acceptSet(n);
     map<int, float> B = acceptSet(n);
 
+
+    cout<<"==================================================\n";
     cout<<"Union Set : "; printSet(unionSet(A,B)); 
     cout<<"Intersection Set : "; printSet(intersectionSet(A,B));
     cout<<"Complement of A : "; printSet(complementSet(A)); 
     cout<<"Complement of B : "; printSet(complementSet(B));
-    cout<<"A-B : "; printSet(differenceSet(A,B));   
-    cout<<"B-A : "; printSet(differenceSet(B,A));   
+    cout<<"A : ";
+    printSet(A);
+
+    cout<<"B : ";    
+    printSet(B);
+    cout<<"A-B : "; printSet(differenceSet(A,complementSet(B)));   
+    cout<<"B-A : "; printSet(differenceSet(B,complementSet(A)));   
 
 }
