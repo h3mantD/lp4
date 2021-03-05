@@ -105,9 +105,9 @@ int main() {
 
     int n; 
     cout<<"\nEnter the size of set : "; cin>>n;
-    cout<<"Enter the elements of set A : ";
+    cout<<"\nEnter the elements of set A : ";
     map<int, float> A = acceptSet(n);
-    cout<<"Enter the elements of set B : ";
+    cout<<"\nEnter the elements of set B : ";
     map<int, float> B = acceptSet(n);
 
     cout<<"A : ";
